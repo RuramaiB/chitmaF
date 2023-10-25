@@ -46,7 +46,7 @@
               if (Object.keys(this.errors).length === 0) {
          // Your code for handling the login form submission
          try{
-          await axios.post('http://15.206.28.166:7210/api/v1/auth/login',{
+          await axios.post('https://15.206.28.166:7210/api/v1/auth/login',{
           membershipNumber:this.membershipNumber,
           password :this.password
           },{

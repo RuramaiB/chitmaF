@@ -436,7 +436,7 @@
     methods:{
       async getUserByMembershipNumber(membershipNumber){
             this.loading = true;
-      const URL = `http://15.206.28.166:7210/api/v1/auth/getUserByMembershipNumber/${membershipNumber}`;
+      const URL = `https://15.206.28.166:7210/api/v1/auth/getUserByMembershipNumber/${membershipNumber}`;
       // const token = localStorage.token;
       await axios.get(URL,{
         headers: {'Content-Type': 'application/json',
@@ -495,7 +495,7 @@
           // make API call or submit form data here
           try{
             const local = localStorage.local
-          await axios.post('http://15.206.28.166:7210/api/v1/auth/register',{
+          await axios.post('https://15.206.28.166:7210/api/v1/auth/register',{
             'firstname': this.users.firstname,  
             'lastname': this.users.lastname,  
             'gender': this.users.gender,  
@@ -528,8 +528,8 @@
       Number.parseInt(pageNumber)
       pageNumber -=1;
       const local = localStorage.local;
-      const URL = `http://15.206.28.166:7210/api/v1/auth/getAllAdminAccounts/${pageNumber}`;
-      // const URL = "http://15.206.28.166:7210/api/v1/auth/getAllNonAdminAccounts/${pageNumber}/${local}";
+      const URL = `https://15.206.28.166:7210/api/v1/auth/getAllAdminAccounts/${pageNumber}`;
+      // const URL = "https://15.206.28.166:7210/api/v1/auth/getAllNonAdminAccounts/${pageNumber}/${local}";
       const token = localStorage.token;
       await axios.get(URL,{
         headers: {'Content-Type': 'application/json',
@@ -580,7 +580,7 @@
           // make API call or submit form data here
           try{
             const local = localStorage.local
-          await axios.put('http://15.206.28.166:7210/api/v1/auth/updateUserByMembershipNumber/' + membershipNumber,{
+          await axios.put('https://15.206.28.166:7210/api/v1/auth/updateUserByMembershipNumber/' + membershipNumber,{
             'firstname': this.account.firstname,  
             'lastname': this.account.lastname,  
             'gender': this.account.gender,  
@@ -610,7 +610,7 @@
      async handleOption (_option) {
         if(_option = 'yes'){
           try{
-          await axios.delete('http://15.206.28.166:7210/api/v1/auth/deleteUserByMembershipNumber/' + this.membershipNumber,{
+          await axios.delete('https://15.206.28.166:7210/api/v1/auth/deleteUserByMembershipNumber/' + this.membershipNumber,{
               headers: {'Content-Type': 'application/json'},
               credentials: 'include'
             }).then((response) =>{

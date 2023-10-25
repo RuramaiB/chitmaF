@@ -70,7 +70,7 @@ export default {
     async fetchUser(){
       
       this.loading = true;
-      const URL = "http://15.206.28.166:7210/api/v1/auth/getUserByMembershipNumber/" + localStorage.membershipNumber;
+      const URL = "https://15.206.28.166:7210/api/v1/auth/getUserByMembershipNumber/" + localStorage.membershipNumber;
       await axios.get(URL,{
         headers: {'Content-Type': 'application/json',
             // Authorization : 'Bearer ' + token,

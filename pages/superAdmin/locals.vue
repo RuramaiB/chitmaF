@@ -240,7 +240,7 @@
       async getLocalByName(name){
             this.loading = true;
             const locName = name.replace('%20', '@');
-      const URL = `http://15.206.28.166:7210/local/getLocalPreachingPointByName/?preachingPoint=${locName}`;
+      const URL = `https://15.206.28.166:7210/local/getLocalPreachingPointByName/?preachingPoint=${locName}`;
       // const token = localStorage.token;
       await axios.get(URL,{
         headers: {'Content-Type': 'application/json',
@@ -261,7 +261,7 @@
       },
       async getLocals(){
       this.loading = true;
-      const URL = "http://15.206.28.166:7210/local/getAllLocalPreachingPoints";
+      const URL = "https://15.206.28.166:7210/local/getAllLocalPreachingPoints";
       await axios.get(URL,{
         headers: {'Content-Type': 'application/json',
             // Authorization : 'Bearer ' + token,
@@ -285,7 +285,7 @@
               if (Object.keys(this.errors).length === 0) {
           // make API call or submit form data here
           try{
-          await axios.post('http://15.206.28.166:7210/local',{
+          await axios.post('https://15.206.28.166:7210/local',{
             'localLocation': this.loc.location,  
             'localName': this.loc.local,
           },{
@@ -318,7 +318,7 @@
               if (Object.keys(this.errors).length === 0) {
           // make API call or submit form data here
           try{
-          await axios.put('http://15.206.28.166:7210/local/updateLocalByName/' + locNames,{
+          await axios.put('https://15.206.28.166:7210/local/updateLocalByName/' + locNames,{
             location: this.locs.location,  
             name: this.locs.name,
           },{
@@ -341,7 +341,7 @@
      async handleOption (_option) {
         if(_option = 'yes'){
           try{
-          await axios.delete('http://15.206.28.166:7210/local/deleteLocalPreachingPointByName/' + this.name,{
+          await axios.delete('https://15.206.28.166:7210/local/deleteLocalPreachingPointByName/' + this.name,{
               headers: {'Content-Type': 'application/json'},
               credentials: 'include'
             }).then((response) =>{

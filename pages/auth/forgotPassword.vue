@@ -47,7 +47,7 @@
                if (Object.keys(this.errors).length === 0) {
            // make API call or submit form data here
            try{
-           await axios.post('http://15.206.28.166:7210/otp/sendOTP',{
+           await axios.post('https://15.206.28.166:7210/otp/sendOTP',{
               'membershipNumber': this.membershipNumber,
               'phoneNumber': this.phoneNumber
            },{

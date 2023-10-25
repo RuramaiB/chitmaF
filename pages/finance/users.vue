@@ -213,7 +213,7 @@
     methods:{
       async getUserByMembershipNumber(membershipNumber){
             this.loading = true;
-      const URL = `http://15.206.28.166:7210/api/v1/auth/getUserByMembershipNumber/${membershipNumber}`;
+      const URL = `https://15.206.28.166:7210/api/v1/auth/getUserByMembershipNumber/${membershipNumber}`;
       // const token = localStorage.token;
       await axios.get(URL,{
         headers: {'Content-Type': 'application/json',
@@ -238,8 +238,8 @@
       pageNumber -=1;
       const pp = localStorage.getItem('pp');
       const local = decryptData(pp);
-      const URL = `http://15.206.28.166:7210/api/v1/auth/getAllUsersAccounts/${pageNumber}/${local}`;
-      // const URL = "http://15.206.28.166:7210/api/v1/auth/getAllNonAdminAccounts/${pageNumber}/${local}";
+      const URL = `https://15.206.28.166:7210/api/v1/auth/getAllUsersAccounts/${pageNumber}/${local}`;
+      // const URL = "https://15.206.28.166:7210/api/v1/auth/getAllNonAdminAccounts/${pageNumber}/${local}";
       const token = localStorage.token;
       await axios.get(URL,{
         headers: {'Content-Type': 'application/json',

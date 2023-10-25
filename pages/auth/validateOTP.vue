@@ -42,7 +42,7 @@
            try{
             const membershipNumber = this.membershipNumber;
             const otp = this.otp
-           await axios.post(`http://15.206.28.166:7210/otp/validateOTP/${membershipNumber}/${otp}`,{
+           await axios.post(`https://15.206.28.166:7210/otp/validateOTP/${membershipNumber}/${otp}`,{
            },{
                headers: {'Content-Type': 'application/json'},
                credentials: 'include'

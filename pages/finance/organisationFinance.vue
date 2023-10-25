@@ -397,7 +397,7 @@ export default {
     pageNumber -=1;
     const pp = localStorage.getItem('pp');
       const local = decryptData(pp);
-    const URL = `http://15.206.28.166:7210/organisationsFinance/getAllOrganisationsByLocal/${local}/${pageNumber}`;
+    const URL = `https://15.206.28.166:7210/organisationsFinance/getAllOrganisationsByLocal/${local}/${pageNumber}`;
     await axios.get(URL,{
       headers: {'Content-Type': 'application/json',
           // Authorization : 'Bearer ' + token,
@@ -417,7 +417,7 @@ export default {
   },
   async fetchOrgFinanceByID(id){
           this.loading = true;
-    const URL = `http://15.206.28.166:7210/organisationsFinance/getOrganisationsFinanceByFinanceID/${id}`;
+    const URL = `https://15.206.28.166:7210/organisationsFinance/getOrganisationsFinanceByFinanceID/${id}`;
     await axios.get(URL,{
       headers: {'Content-Type': 'application/json',
           // Authorization : 'Bearer ' + token,
@@ -464,7 +464,7 @@ export default {
         try{
           const pp = localStorage.getItem('pp');
       const local = decryptData(pp);
-        await axios.post('http://15.206.28.166:7210/organisationsFinance/addOrganisationsFinance',{
+        await axios.post('https://15.206.28.166:7210/organisationsFinance/addOrganisationsFinance',{
           'amount': this.payments.amount,  
           'phoneNumber': this.payments.phoneNumber,
           'paymentMethod': this.payments.paymentMethod,
@@ -493,7 +493,7 @@ export default {
   async handleOption (_option) {
       if(_option = 'yes'){
         try{
-        await axios.delete('http://15.206.28.166:7210/organisationsFinance/deleteOrganisationsFinance/' + this.FID,{
+        await axios.delete('https://15.206.28.166:7210/organisationsFinance/deleteOrganisationsFinance/' + this.FID,{
             headers: {'Content-Type': 'application/json'},
             credentials: 'include'
           }).then((response) =>{
@@ -541,7 +541,7 @@ export default {
         try{
           const pp = localStorage.getItem('pp');
       const local = decryptData(pp);
-        await axios.put(`http://15.206.28.166:7210/organisationsFinance/updateOrganisationFinanceByFinanceID/${id}`,{
+        await axios.put(`https://15.206.28.166:7210/organisationsFinance/updateOrganisationFinanceByFinanceID/${id}`,{
           'amount': this.finance.amount,  
           'phoneNumber': this.finance.phoneNumber,
           'paymentMethod': this.finance.paymentMethod,
@@ -571,7 +571,7 @@ export default {
     this.loading = true;
     const pp = localStorage.getItem('pp');
       const local = decryptData(pp);
-    const URL = `http://15.206.28.166:7210/financeDescription/getAllFinanceDescriptions/${local}`;
+    const URL = `https://15.206.28.166:7210/financeDescription/getAllFinanceDescriptions/${local}`;
     await axios.get(URL,{
       headers: {'Content-Type': 'application/json',
           // Authorization : 'Bearer ' + token,

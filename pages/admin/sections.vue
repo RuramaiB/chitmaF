@@ -235,7 +235,7 @@ export default {
           this.loading = true;
           const locName = name.replace('%20', '@');
       
-    const URL = `http://15.206.28.166:7210/local/getLocalPreachingPointByName/?preachingPoint=${locName}`;
+    const URL = `https://15.206.28.166:7210/local/getLocalPreachingPointByName/?preachingPoint=${locName}`;
     // const token = localStorage.token;
     await axios.get(URL,{
       headers: {'Content-Type': 'application/json',
@@ -260,7 +260,7 @@ export default {
     pageNumber -=1;
     const pp = localStorage.getItem('pp');
       const local = decryptData(pp);
-    const URL = `http://15.206.28.166:7210/sections/getAllSections/${local}/${pageNumber}`;
+    const URL = `https://15.206.28.166:7210/sections/getAllSections/${local}/${pageNumber}`;
     await axios.get(URL,{
       headers: {'Content-Type': 'application/json',
           // Authorization : 'Bearer ' + token,
@@ -291,7 +291,7 @@ export default {
         try{
           const pp = localStorage.getItem('pp');
       const local = decryptData(pp);
-        await axios.post('http://15.206.28.166:7210/sections',{
+        await axios.post('https://15.206.28.166:7210/sections',{
           'preachingPoint': local,  
           'sectionName': this.loc.name,
         },{
@@ -314,7 +314,7 @@ export default {
    async handleOption (_option) {
       if(_option = 'yes'){
         try{
-        await axios.delete('http://15.206.28.166:7210/sections/deleteSectionByName/' + this.name,{
+        await axios.delete('https://15.206.28.166:7210/sections/deleteSectionByName/' + this.name,{
             headers: {'Content-Type': 'application/json'},
             credentials: 'include'
           }).then((response) =>{

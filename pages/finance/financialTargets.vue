@@ -214,7 +214,7 @@
       pageNumber -=1;
       const pp = localStorage.getItem('pp');
       const local = decryptData(pp);
-      const URL = `http://15.206.28.166:7210/financialTargets/getAllFinancialTargetsByLocal/${local}/${pageNumber}`;
+      const URL = `https://15.206.28.166:7210/financialTargets/getAllFinancialTargetsByLocal/${local}/${pageNumber}`;
       await axios.get(URL,{
         headers: {'Content-Type': 'application/json',
             // Authorization : 'Bearer ' + token,
@@ -248,7 +248,7 @@
           try{
             const pp = localStorage.getItem('pp');
       const local = decryptData(pp);
-          await axios.post('http://15.206.28.166:7210/financeDescription/addNewFinanceDescriptions',{
+          await axios.post('https://15.206.28.166:7210/financeDescription/addNewFinanceDescriptions',{
             'description': this.targets.description,  
             'status': this.targets.status,
             'local': local,
@@ -272,7 +272,7 @@
      async handleOption (_option) {
         if(_option = 'yes'){
           try{
-          await axios.delete('http://15.206.28.166:7210/local/deleteLocalPreachingPointByName/' + this.name,{
+          await axios.delete('https://15.206.28.166:7210/local/deleteLocalPreachingPointByName/' + this.name,{
               headers: {'Content-Type': 'application/json'},
               credentials: 'include'
             }).then((response) =>{
